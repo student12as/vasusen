@@ -45,5 +45,17 @@ async def remt(event):
 @Drone.on(events.NewMessage(incoming=True, pattern=f"{S}"))
 async def start(event):
     text = "Send me Link of any message to clone it here, For private channel message, send invite link first."
-    await start_srb(event, text)
+    #await start_srb(event, text)
+    '''
+    await event.reply(text, 
+                      buttons=[
+                              [Button.inline("SET THUMB.", data="set"),
+                               Button.inline("REM THUMB.", data="rem")],        
+                              ])                           
+    '''                          
     
+    await event.reply(text, 
+                      buttons=[
+                              [Button.inline("SET THUMB.", data="set"),
+                               Button.inline("REM THUMB.", data="rem")]
+                              [Button.url("💌 contact us 💌", url="https://telegram.dog/botpurposebot")]])
